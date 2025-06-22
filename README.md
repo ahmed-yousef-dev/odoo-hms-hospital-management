@@ -104,6 +104,14 @@ Assign appropriate roles via **Settings > Users > Groups**.
 
 ## 📸 Screenshots
 
+### Access Rights and Medical History
+
+![Access Rights](assets/Access_Rights.png)
+![Manager Access](assets/Manager_Access.png)
+![HMS User Department View](assets/HMS_User_Department_View.png)
+![HMS User Patient Tree View](assets/HMS_User_Patient_Tree_View.png)
+![Medical History](assets/Medical_History.png)
+
 ### Department and Doctor Management
 
 ![Cardiology Department](assets/Cardiology_Department.png)
