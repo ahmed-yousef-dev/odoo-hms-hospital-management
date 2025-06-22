@@ -102,6 +102,29 @@ Assign appropriate roles via **Settings > Users > Groups**.
 
 ---
 
+## 📸 Screenshots
+
+### Department and Doctor Management
+
+![Cardiology Department](assets/Cardiology_Department.png)
+![Departments Tree View](assets/Departments_tree_view.png)
+![Doctors Tree View](assets/Doctors_tree_view.png)
+![Doctor 1 Detail](assets/Doctor_1.png)
+
+### Patient Management
+
+![Patients Tree View](assets/Patients_tree_view.png)
+![Patient Form](assets/Patient_Form_Info.png)
+![Patient Detail](assets/Patient_1.png)
+!\[CR Ratio Validation]\(assets/CR Ratio is mandatory when PCR is required..png)
+
+### CRM and Reporting
+
+!\[CRM Related Field]\(assets/CRM Related Field.png)
+![PDF Report](assets/PDF_Report.png)
+
+---
+
 ## 🛠 Development
 
 * **Compatible with:** Odoo 17.0
