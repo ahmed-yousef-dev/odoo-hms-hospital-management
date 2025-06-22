@@ -1,0 +1,28 @@
+/* 
+    Fix for Integer fields (like age) appearing right-aligned in tree views
+
+    Problem: Odoo automatically applies right-alignment and flex-row-reverse
+    to Integer/Float/Monetary fields in list views, making them look different 
+    from other field types (Char, Selection, etc.)
+
+    This CSS overrides Odoo's default styling to make Integer fields 
+    align left like other field types
+ */
+
+/* Fix the data cells (tbody) for Integer fields - make them left-aligned */
+.o_list_renderer .o_list_table tbody .o_data_cell.o_list_number {
+    flex-direction: row !important;
+    text-align: left !important;
+}
+
+/* Fix the table headers (thead) for Integer fields - make them left-aligned */
+.o_list_renderer .o_list_table thead .o_list_number_th {
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+
+/* Arrow icon need to be in the right, and age title on the left so has to remove the .flex-row-reverse class as it reverse them. */
+.flex-row-reverse {
+    flex-direction: initial !important;
+}

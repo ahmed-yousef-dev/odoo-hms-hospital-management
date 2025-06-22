@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_hms_patient_status" model="ir.actions.report">
+        <field name="name">Patient Status Report</field>
+        <field name="model">hms.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hms.report_hms_patient_status</field>
+        <field name="report_file">hms.report_hms_patient_status</field>
+        <field name="binding_model_id" ref="model_hms_patient"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">(object.first_name or '') + ' ' + (object.last_name or '') + ' - Status Report'</field>
+    </record>
+</odoo>

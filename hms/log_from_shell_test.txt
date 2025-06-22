@@ -1,0 +1,6 @@
+patient.add_log_entry("This is a test log from shell")
+patient = env['hms.patient'].search([], limit=1)
+for log in patient.log_history_ids:
+    print(f"{log.create_date}: {log.description}")
+
+env.cr.commit()

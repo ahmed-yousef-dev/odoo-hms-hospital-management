@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_hms_patient_status">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="page" style="font-family: 'Segoe UI', Arial, sans-serif; padding: 32px;">
+                    <div style="border-bottom: 2px solid #1976d2; margin-bottom: 24px;">
+                        <h2 style="color: #1976d2; margin: 0;">Patient Status Report</h2>
+                    </div>
+                    <table style="width: 100%; font-size: 16px; margin-bottom: 24px;">
+                        <tr>
+                            <td><strong>Name:</strong></td>
+                            <td><span t-esc="o.first_name"/> <span t-esc="o.last_name"/></td>
+                            <td><strong>Age:</strong></td>
+                            <td><span t-esc="o.age"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Department:</strong></td>
+                            <td><span t-esc="o.department_id.name"/></td>
+                            <td><strong>Doctors:</strong></td>
+                            <td>
+                                <t t-esc="', '.join(['%s %s' % (d.first_name or '', d.last_name or '') for d in o.doctors_ids])"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Birth date:</strong></td>
+                            <td><span t-esc="o.birth_date"/></td>
+                            <td><strong>PCR:</strong></td>
+                            <td><span t-esc="o.pcr"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blood Type:</strong></td>
+                            <td><span t-esc="o.blood_type"/></td>
+                            <td><strong>Email:</strong></td>
+                            <td><span t-esc="o.email"/></td>
+                        </tr>
+                    </table>
+                    <div style="margin-bottom: 16px;">
+                        <h4 style="color: #1976d2; margin-bottom: 8px;">User Date Info</h4>
+                        <span t-esc="o.create_date"/>
+                    </div>
+                    <div>
+                        <h4 style="color: #1976d2; margin-bottom: 8px;">Log History</h4>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #e3f2fd;">
+                                    <th style="padding: 6px; border: 1px solid #1976d2;">Date</th>
+                                    <th style="padding: 6px; border: 1px solid #1976d2;">Created By</th>
+                                    <th style="padding: 6px; border: 1px solid #1976d2;">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.log_history_ids" t-as="log">
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid #1976d2;"><span t-esc="log.date"/></td>
+                                        <td style="padding: 6px; border: 1px solid #1976d2;"><span t-esc="log.created_by.name"/></td>
+                                        <td style="padding: 6px; border: 1px solid #1976d2;"><span t-esc="log.description"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
